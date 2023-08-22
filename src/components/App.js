@@ -14,6 +14,7 @@ function App() {
       <CategoryFilter />
       <NewTaskForm />
       <TaskList />
+      <TASKS/>
     </div>
   );
 }
