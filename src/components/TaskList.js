@@ -1,14 +1,7 @@
 import React from "react";
 import Task from "./Task";
 
-function TaskList(props) {
-  const { tasks } = props;
-
-  const handleDelete = (taskId) => {
-    const updatedTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(updatedTasks);
-  };
-
+function TaskList({ tasks, onTaskDelete }) {
   return (
     <div className="tasks">
       {tasks.map((task) => (
@@ -16,7 +9,7 @@ function TaskList(props) {
           key={task.id}
           category={task.category}
           text={task.text}
-          onDelete={() => handleDelete(task.id)}
+          onDelete={() => onTaskDelete(task.id)}
         />
       ))}
     </div>
@@ -24,3 +17,4 @@ function TaskList(props) {
 }
 
 export default TaskList;
+
